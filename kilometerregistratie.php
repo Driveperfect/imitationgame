@@ -664,7 +664,7 @@
 						<div class="toolbar row">
 							<div class="col-sm-6 hidden-xs">
 								<div class="page-header">
-									<h1>Table Export <small>table export samples</small></h1>
+									<h1>{{ PAGE_TITLE }}<small>{{ PAGE_DESCRIPTION }}</small></h1>
 								</div>
 							</div>
 							<div class="col-sm-6 col-xs-12">
@@ -823,12 +823,13 @@
 							<div class="col-md-12">
 								<ol class="breadcrumb">
 									<li>
-										<a href="#">
-											Dashboard
-										</a>
+										<a href="#">path</a>
+									</li>
+									<li>
+										to
 									</li>
 									<li class="active">
-										Export Tables
+										page
 									</li>
 								</ol>
 							</div>
@@ -837,193 +838,65 @@
 						<!-- start: PAGE CONTENT -->
 						<div class="row">
 							<div class="col-md-12">
-								<!-- start: EXPORT BASIC TABLE PANEL -->
+								<!-- start: dropdown tab -->
+								<div class="tabbable">
+									<!-- start: tabs -->
+									<ul id="tab" class="nav nav-tabs">
+										<li class="active">
+											<a href="#tab_1" data-toggle="tab" class="tab">
+												01-BT-KB
+											</a>
+										</li>
+										<li>
+											<a href="#tab_2" data-toggle="tab" class="tab">
+												PP-91-HX
+											</a>
+										</li>
+										<li>
+											<a href="#tab_3" data-toggle="tab" class="tab">
+												KZ-05-LT
+											</a>
+										</li>
+										<!-- start: dropdown tabs -->
+										<li class="dropdown">
+											<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+												Meer &nbsp; <i class="fa fa-caret-down width-auto"></i>
+											</a>
+											<ul class="dropdown-menu dropdown-info">
+												<li>
+													<a href="#tab_4" data-toggle="tab" class="tab">
+														52-ZSK-5
+													</a>
+												</li>
+												<li>
+													<a href="#tab_5" data-toggle="tab" class="tab">
+														1-KBB-00
+													</a>
+												</li>
+											</ul>
+										</li>
+										<!-- end: dropdown tabs -->
+									</ul>
+									<!-- end: tabs -->
+									<div class="tab-content">
+										<div class="tab-pane fade in active" id="tab_1">
 
-								<!-- end: EXPORT BASIC TABLE PANEL -->
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-md-12">
-								<!-- start: EXPORT DATA TABLE PANEL  -->
-								<div class="panel panel-white">
-									<div class="panel-heading">
-										<h4 class="panel-title">Export <span class="text-bold">Data</span> Table</h4>
-										<div class="panel-tools">
-											<div class="dropdown">
-												<a data-toggle="dropdown" class="btn btn-xs dropdown-toggle btn-transparent-grey">
-													<i class="fa fa-cog"></i>
-												</a>
-												<ul class="dropdown-menu dropdown-light pull-right" role="menu">
-													<li>
-														<a class="panel-collapse collapses" href="#"><i class="fa fa-angle-up"></i> <span>Collapse</span> </a>
-													</li>
-													<li>
-														<a class="panel-refresh" href="#">
-															<i class="fa fa-refresh"></i> <span>Refresh</span>
-														</a>
-													</li>
-													<li>
-														<a class="panel-config" href="#panel-config" data-toggle="modal">
-															<i class="fa fa-wrench"></i> <span>Configurations</span>
-														</a>
-													</li>
-													<li>
-														<a class="panel-expand" href="#">
-															<i class="fa fa-expand"></i> <span>Fullscreen</span>
-														</a>
-													</li>
-												</ul>
-											</div>
 										</div>
-									</div>
-									<div class="panel-body">
-										<div class="row">
-											<div class="col-md-12 space20">
-												<button class="btn btn-orange add-row">
-													Add New <i class="fa fa-plus"></i>
-												</button>
-												<div class="btn-group pull-right">
-													<button data-toggle="dropdown" class="btn btn-green dropdown-toggle">
-														Export <i class="fa fa-angle-down"></i>
-													</button>
-													<ul class="dropdown-menu dropdown-light pull-right">
-														<li>
-															<a href="#" class="export-pdf" data-table="#sample-table-2" data-ignorecolumn="3,4">
-																Save as PDF
-															</a>
-														</li>
-														<li>
-															<a href="#" class="export-png" data-table="#sample-table-2" data-ignorecolumn="3,4">
-																Save as PNG
-															</a>
-														</li>
-														<li>
-															<a href="#" class="export-csv" data-table="#sample-table-2" data-ignorecolumn="3,4">
-																Save as CSV
-															</a>
-														</li>
-														<li>
-															<a href="#" class="export-txt" data-table="#sample-table-2" data-ignorecolumn="3,4">
-																Save as TXT
-															</a>
-														</li>
-														<li>
-															<a href="#" class="export-xml" data-table="#sample-table-2" data-ignorecolumn="3,4">
-																Save as XML
-															</a>
-														</li>
-														<li>
-															<a href="#" class="export-sql" data-table="#sample-table-2" data-ignorecolumn="3,4">
-																Save as SQL
-															</a>
-														</li>
-														<li>
-															<a href="#" class="export-json" data-table="#sample-table-2" data-ignorecolumn="3,4">
-																Save as JSON
-															</a>
-														</li>
-														<li>
-															<a href="#" class="export-excel" data-table="#sample-table-2" data-ignorecolumn="3,4">
-																Export to Excel
-															</a>
-														</li>
-														<li>
-															<a href="#" class="export-doc" data-table="#sample-table-2" data-ignorecolumn="3,4">
-																Export to Word
-															</a>
-														</li>
-														<li>
-															<a href="#" class="export-powerpoint" data-table="#sample-table-2" data-ignorecolumn="3,4">
-																Export to PowerPoint
-															</a>
-														</li>
-													</ul>
-												</div>
-											</div>
+										<div class="tab-pane fade" id="tab_2">
+											test
 										</div>
-										<div class="table-responsive">
-											<table class="table table-striped table-hover" id="sample-table-2">
-												<thead>
-													<tr>
-														<th>Full Name</th>
-														<th>Role</th>
-														<th>Phone</th>
-														<th>Edit</th>
-														<th>Delete</th>
-													</tr>
-												</thead>
-												<tbody>
-													<tr>
-														<td>Peter Clark</td>
-														<td>UI Designer</td>
-														<td>(641)-734-4763</td>
-														<td>
-														<a href="#" class="edit-row">
-															Edit
-														</a></td>
-														<td>
-														<a href="#" class="delete-row">
-															Delete
-														</a></td>
-													</tr>
-													<tr>
-														<td>Nicole Bell</td>
-														<td>Content Designer</td>
-														<td>(741)-034-4573</td>
-														<td>
-														<a href="#" class="edit-row">
-															Edit
-														</a></td>
-														<td>
-														<a href="#" class="delete-row">
-															Delete
-														</a></td>
-													</tr>
-													<tr>
-														<td>Steven Thompson</td>
-														<td>Visual Designer</td>
-														<td>(471)-543-4073</td>
-														<td>
-														<a href="#" class="edit-row">
-															Edit
-														</a></td>
-														<td>
-														<a href="#" class="delete-row">
-															Delete
-														</a></td>
-													</tr>
-													<tr>
-														<td>Ella Patterson</td>
-														<td>Web Editor</td>
-														<td>(799)-994-9999</td>
-														<td>
-														<a href="#" class="edit-row">
-															Edit
-														</a></td>
-														<td>
-														<a href="#" class="delete-row">
-															Delete
-														</a></td>
-													</tr>
-													<tr>
-														<td>Kenneth Ross</td>
-														<td>Senior Designer</td>
-														<td>(111)-114-1173</td>
-														<td>
-														<a href="#" class="edit-row">
-															Edit
-														</a></td>
-														<td>
-														<a href="#" class="delete-row">
-															Delete
-														</a></td>
-													</tr>
-												</tbody>
-											</table>
+										<div class="tab-pane fade" id="tab_3">
+
+										</div>
+										<div class="tab-pane fade" id="tab_4">
+
+										</div>
+										<div class="tab-pane fade" id="tab_5">
+
 										</div>
 									</div>
 								</div>
-								<!-- end: EXPORT DATA TABLE PANEL -->
+								<!-- end: dropdown tab -->
 							</div>
 						</div>
 						<!-- end: PAGE CONTENT-->
@@ -1516,7 +1389,7 @@
 		<script src="assets\plugins\tableExport\jspdf\libs\sprintf.js"></script>
 		<script src="assets\plugins\tableExport\jspdf\jspdf.js"></script>
 		<script src="assets\plugins\tableExport\jspdf\libs\base64.js"></script>
-		<script src="assets\js\table-export.js"></script>
+		<script src="assets/custom/js/tab-dropdown-table-export.js"></script>
 		<!-- end: JAVASCRIPTS REQUIRED FOR THIS PAGE ONLY -->
 		<!-- start: CORE JAVASCRIPTS  -->
 		<script src="assets\js\main.js"></script>
@@ -1525,7 +1398,7 @@
 			jQuery(document).ready(function() {
 				Main.init();
 				SVExamples.init();
-				TableExport.init();
+				TabDropdownTableExport.init();
 			});
 		</script>
 	</body>
