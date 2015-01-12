@@ -1,8 +1,4 @@
-/**
- * Created by DANNY on 09 jan 15.
- */
-
-var TabDropdownTableExport = function() {
+var TableExport = function() {
     "use strict";
     //function to initiate HTML Table Export
     var runTableExportTools = function() {
@@ -117,6 +113,50 @@ var TabDropdownTableExport = function() {
         var newRow = false;
         var actualEditingRow = null;
 
+        
+        function getRows(json) {
+
+            // Set the car number
+            $('#car-number').text(json.car.number);
+
+            // Clear the table
+            oTable.fnClearTable();
+
+            // Add the fetched data into the table.
+            var len = 0;
+            var registers = json.car.registers;
+            for(var register in registers) {
+
+                len = registers[register].length;
+
+                //Add the 2 columns for edition and deletion to also prefend error messages from JavaScript.
+                registers[register][len++] = '<a class="edit-row" href="">Edit</a>';
+                registers[register][len++] = '<a class="delete-row" href="">Delete</a>';
+
+                oTable.fnAddData(registers[register]);
+            }
+        }
+
+        $('body').on('click', '.tab', function(e) {
+            e.preventDefault();
+
+            $.blockUI({
+                message : '<i class="fa fa-spinner fa-spin"></i> Get car registers.<br> please wait..'
+            });
+            $.ajax({
+                url : '/getcarregisters.php',
+                type : 'get',
+                data : {'car_number' : this.innerHTML},
+                success : function(data) {
+
+                    getRows(JSON.parse(data));
+                    $.unblockUI();
+                }
+            });
+        });
+
+
+
         function restoreRow(oTable, nRow) {
             var aData = oTable.fnGetData(nRow);
             var jqTds = $('>td', nRow);
@@ -152,13 +192,6 @@ var TabDropdownTableExport = function() {
             actualEditingRow = null;
         }
 
-        function getRows(tab) {
-            alert(tab);
-
-            $(tab).innerText = "Hello, World!<br> Test row.";
-            document.getElementById("tab_2").innerHTML = "Hellooooo!!";
-        }
-
         $('body').on('click', '.add-row', function(e) {
             e.preventDefault();
             if (newRow == false) {
@@ -172,36 +205,7 @@ var TabDropdownTableExport = function() {
                 actualEditingRow = nRow;
             }
         });
-
-        $('body').on('click', '.tab', function(e) {
-            e.preventDefault();
-
-            var tab = this.href.split('#')[1];
-
-            $.blockUI({
-                message : '<i class="fa fa-spinner fa-spin"></i> Get car registers.<br> please wait..'
-            });
-            $.mockjax({
-                url : 'http://dev.imitationgame/getcarregisters.php',
-                dataType : 'json',
-                responseTime : 1000,
-                responseText : {
-                    say : 'ok'
-                }
-            });
-            $.ajax({
-                url : 'http://dev.imitationgame/getcarregisters.php',
-                dataType : 'json',
-                success : function(json) {
-                    $.unblockUI();
-                    if (json.say == "ok") {
-                        getRows(tab);
-                    }
-                }
-            });
-        });
-
-        $('#car_table_XX-XX-XX').on('click', '.cancel-row', function(e) {
+        $('#sample-table-2').on('click', '.cancel-row', function(e) {
 
             e.preventDefault();
             if (newRow) {
@@ -215,7 +219,7 @@ var TabDropdownTableExport = function() {
                 actualEditingRow = null;
             }
         });
-        $('#car_tab_XX-XX-XX').on('click', '.delete-row', function(e) {
+        $('#sample-table-2').on('click', '.delete-row', function(e) {
             e.preventDefault();
             if (newRow && actualEditingRow) {
                 oTable.fnDeleteRow(actualEditingRow);
@@ -249,9 +253,11 @@ var TabDropdownTableExport = function() {
 
                 }
             });
-        });
 
-        $('#car_table_XX-XX-XX').on('click', '.save-row', function(e) {
+
+
+        });
+        $('#sample-table-2').on('click', '.save-row', function(e) {
             e.preventDefault();
 
             var nRow = $(this).parents('tr')[0];
@@ -277,7 +283,7 @@ var TabDropdownTableExport = function() {
                 }
             });
         });
-        $('#car_table_XX-XX-XX').on('click', '.edit-row', function(e) {
+        $('#sample-table-2').on('click', '.edit-row', function(e) {
             e.preventDefault();
             if (actualEditingRow) {
                 if (newRow) {
@@ -291,9 +297,8 @@ var TabDropdownTableExport = function() {
             var nRow = $(this).parents('tr')[0];
             editRow(oTable, nRow);
             actualEditingRow = nRow;
-
         });
-        var oTable = $('#car_table_XX-XX-XX').dataTable({
+        var oTable = $('#sample-table-2').dataTable({
             "aoColumnDefs" : [{
                 "aTargets" : [0]
             }],
@@ -311,13 +316,13 @@ var TabDropdownTableExport = function() {
             // set the initial value
             "iDisplayLength" : 10,
         });
-        $('#car_table_XX-XX-XX_wrapper .dataTables_filter input').addClass("form-control input-sm").attr("placeholder", "Search");
+        $('#sample-table-2_wrapper .dataTables_filter input').addClass("form-control input-sm").attr("placeholder", "Search");
         // modify table search input
-        $('#car_table_XX-XX-XX_wrapper .dataTables_length select').addClass("m-wrap small");
+        $('#sample-table-2_wrapper .dataTables_length select').addClass("m-wrap small");
         // modify table per page dropdown
-        $('#car_table_XX-XX-XX_wrapper .dataTables_length select').select2();
+        $('#sample-table-2_wrapper .dataTables_length select').select2();
         // initialzie select2 dropdown
-        $('#car_table_XX-XX-XX_column_toggler input[type="checkbox"]').change(function() {
+        $('#sample-table-2_column_toggler input[type="checkbox"]').change(function() {
             /* Get the DataTables object again - this is not a recreation, just a get of the object */
             var iCol = parseInt($(this).attr("data-column"));
             var bVis = oTable.fnSettings().aoColumns[iCol].bVisible;

@@ -6,7 +6,14 @@
  * Time: 12:13
  */
 
-var_dump($_GET);
-
-?>
-Test
+echo json_encode(
+    array(
+        'car' => array(
+            'number' => $_GET['car_number'],
+            'registers' => array(
+                '1' => ['1', '2', '3'],
+                '2' => ['4', '5', '6'],
+            ),
+        ),
+    )
+);
