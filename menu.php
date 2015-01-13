@@ -30,7 +30,7 @@
 										</a>
 										<ul class="sub-menu">
 											<li>
-												<a href="#">
+												<a href="urenschrijven.php">
 													Schrijven
 												</a>
 											</li>
