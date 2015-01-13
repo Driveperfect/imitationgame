@@ -109,11 +109,10 @@ var TableExport = function() {
     //DataTable is a highly flexible tool, based upon the foundations of progressive enhancement,
     //which will add advanced interaction controls to any HTML table
     //For more information, please visit https://datatables.net/
-    var runDataTable_example2 = function() {
+    var runDataTable = function() {
         var newRow = false;
         var actualEditingRow = null;
 
-        
         function getRows(json) {
 
             // Set the car number
@@ -154,6 +153,24 @@ var TableExport = function() {
                 }
             });
         });
+
+        $(document).ready( function() {
+
+            $.blockUI({
+                message : '<i class="fa fa-spinner fa-spin"></i> Get car registers.<br> please wait..'
+            });
+
+            $.ajax({
+                url : '/getcarregisters.php',
+                type : 'get',
+                data : {'car_number' : $("#first_tab").text()},
+                success : function(data) {
+                    getRows(JSON.parse(data));
+                    $.unblockUI();
+                }
+            });
+        });
+
 
 
 
@@ -205,7 +222,8 @@ var TableExport = function() {
                 actualEditingRow = nRow;
             }
         });
-        $('#sample-table-2').on('click', '.cancel-row', function(e) {
+
+        $('#add_km_table').on('click', '.cancel-row', function(e) {
 
             e.preventDefault();
             if (newRow) {
@@ -219,7 +237,8 @@ var TableExport = function() {
                 actualEditingRow = null;
             }
         });
-        $('#sample-table-2').on('click', '.delete-row', function(e) {
+
+        $('#add_km_table').on('click', '.delete-row', function(e) {
             e.preventDefault();
             if (newRow && actualEditingRow) {
                 oTable.fnDeleteRow(actualEditingRow);
@@ -253,11 +272,9 @@ var TableExport = function() {
 
                 }
             });
-
-
-
         });
-        $('#sample-table-2').on('click', '.save-row', function(e) {
+
+        $('#add_km_table').on('click', '.save-row', function(e) {
             e.preventDefault();
 
             var nRow = $(this).parents('tr')[0];
@@ -283,7 +300,8 @@ var TableExport = function() {
                 }
             });
         });
-        $('#sample-table-2').on('click', '.edit-row', function(e) {
+
+        $('#add_km_table').on('click', '.edit-row', function(e) {
             e.preventDefault();
             if (actualEditingRow) {
                 if (newRow) {
@@ -298,7 +316,7 @@ var TableExport = function() {
             editRow(oTable, nRow);
             actualEditingRow = nRow;
         });
-        var oTable = $('#sample-table-2').dataTable({
+        var oTable = $('#add_km_table').dataTable({
             "aoColumnDefs" : [{
                 "aTargets" : [0]
             }],
@@ -314,26 +332,27 @@ var TableExport = function() {
             "aLengthMenu" : [[5, 10, 15, 20, -1], [5, 10, 15, 20, "All"] // change per page values here
             ],
             // set the initial value
-            "iDisplayLength" : 10,
+            "iDisplayLength" : 10
         });
-        $('#sample-table-2_wrapper .dataTables_filter input').addClass("form-control input-sm").attr("placeholder", "Search");
+        $('#add_km_table_wrapper .dataTables_filter input').addClass("form-control input-sm").attr("placeholder", "Search");
         // modify table search input
-        $('#sample-table-2_wrapper .dataTables_length select').addClass("m-wrap small");
+        $('#sadd_km_table_wrapper .dataTables_length select').addClass("m-wrap small");
         // modify table per page dropdown
-        $('#sample-table-2_wrapper .dataTables_length select').select2();
+        $('#add_km_table_wrapper .dataTables_length select').select2();
         // initialzie select2 dropdown
-        $('#sample-table-2_column_toggler input[type="checkbox"]').change(function() {
+        $('#add_km_table_column_toggler input[type="checkbox"]').change(function() {
             /* Get the DataTables object again - this is not a recreation, just a get of the object */
             var iCol = parseInt($(this).attr("data-column"));
             var bVis = oTable.fnSettings().aoColumns[iCol].bVisible;
             oTable.fnSetColumnVis(iCol, ( bVis ? false : true));
         });
     };
+
     return {
         //main function to initiate template pages
         init : function() {
             runTableExportTools();
-            runDataTable_example2();
+            runDataTable();
         }
     };
 }();

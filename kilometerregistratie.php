@@ -843,17 +843,17 @@
 									<!-- start: tabs -->
 									<ul id="tab" class="nav nav-tabs">
 										<li class="active">
-											<a href="#tab_1" data-toggle="tab" class="tab">
+											<a data-toggle="tab" class="tab" id="first_tab">
 												01-BT-KB
 											</a>
 										</li>
 										<li>
-											<a href="#tab_2" data-toggle="tab" class="tab">
+											<a data-toggle="tab" class="tab">
 												PP-91-HX
 											</a>
 										</li>
 										<li>
-											<a href="#tab_3" data-toggle="tab" class="tab">
+											<a data-toggle="tab" class="tab">
 												KZ-05-LT
 											</a>
 										</li>
@@ -879,11 +879,11 @@
 									</ul>
 									<!-- end: tabs -->
 									<div class="tab-content">
-										<div class="tab-pane in active" id="tab_1">
+										<div class="tab-pane in active">
 											<!-- start: EXPORT DATA TABLE PANEL  -->
 											<div class="panel panel-white">
 												<div class="panel-heading">
-													<h4 class="panel-title">Car <span class="text-bold" id="car-number">01-BT-KB</span></h4>
+													<h4 class="panel-title">Car <span class="text-bold" id="car-number"></span></h4>
 													<div class="panel-tools">
 														<div class="dropdown">
 															<a data-toggle="dropdown" class="btn btn-xs dropdown-toggle btn-transparent-grey">
@@ -910,9 +910,6 @@
 																</li>
 															</ul>
 														</div>
-														<a class="btn btn-xs btn-link panel-close" href="#">
-															<i class="fa fa-times"></i>
-														</a>
 													</div>
 												</div>
 												<div class="panel-body">
@@ -927,52 +924,52 @@
 																</button>
 																<ul class="dropdown-menu dropdown-light pull-right">
 																	<li>
-																		<a href="#" class="export-pdf" data-table="#sample-table-2" data-ignorecolumn="3,4">
+																		<a href="#" class="export-pdf" data-table="#add_km_table" data-ignorecolumn="3,4">
 																			Save as PDF
 																		</a>
 																	</li>
 																	<li>
-																		<a href="#" class="export-png" data-table="#sample-table-2" data-ignorecolumn="3,4">
+																		<a href="#" class="export-png" data-table="#add_km_table" data-ignorecolumn="3,4">
 																			Save as PNG
 																		</a>
 																	</li>
 																	<li>
-																		<a href="#" class="export-csv" data-table="#sample-table-2" data-ignorecolumn="3,4">
+																		<a href="#" class="export-csv" data-table="#add_km_table" data-ignorecolumn="3,4">
 																			Save as CSV
 																		</a>
 																	</li>
 																	<li>
-																		<a href="#" class="export-txt" data-table="#sample-table-2" data-ignorecolumn="3,4">
+																		<a href="#" class="export-txt" data-table="#add_km_table" data-ignorecolumn="3,4">
 																			Save as TXT
 																		</a>
 																	</li>
 																	<li>
-																		<a href="#" class="export-xml" data-table="#sample-table-2" data-ignorecolumn="3,4">
+																		<a href="#" class="export-xml" data-table="#add_km_table" data-ignorecolumn="3,4">
 																			Save as XML
 																		</a>
 																	</li>
 																	<li>
-																		<a href="#" class="export-sql" data-table="#sample-table-2" data-ignorecolumn="3,4">
+																		<a href="#" class="export-sql" data-table="#add_km_table" data-ignorecolumn="3,4">
 																			Save as SQL
 																		</a>
 																	</li>
 																	<li>
-																		<a href="#" class="export-json" data-table="#sample-table-2" data-ignorecolumn="3,4">
+																		<a href="#" class="export-json" data-table="#add_km_table" data-ignorecolumn="3,4">
 																			Save as JSON
 																		</a>
 																	</li>
 																	<li>
-																		<a href="#" class="export-excel" data-table="#sample-table-2" data-ignorecolumn="3,4">
+																		<a href="#" class="export-excel" data-table="#add_km_table" data-ignorecolumn="3,4">
 																			Export to Excel
 																		</a>
 																	</li>
 																	<li>
-																		<a href="#" class="export-doc" data-table="#sample-table-2" data-ignorecolumn="3,4">
+																		<a href="#" class="export-doc" data-table="#add_km_table" data-ignorecolumn="3,4">
 																			Export to Word
 																		</a>
 																	</li>
 																	<li>
-																		<a href="#" class="export-powerpoint" data-table="#sample-table-2" data-ignorecolumn="3,4">
+																		<a href="#" class="export-powerpoint" data-table="#add_km_table" data-ignorecolumn="3,4">
 																			Export to PowerPoint
 																		</a>
 																	</li>
@@ -981,7 +978,7 @@
 														</div>
 													</div>
 													<div class="table-responsive">
-														<table class="table table-striped table-hover" id="sample-table-2">
+														<table class="table table-striped table-hover" id="add_km_table"">
 															<thead>
 															<tr>
 																<th>Full Name</th>
@@ -991,73 +988,6 @@
 																<th>Delete</th>
 															</tr>
 															</thead>
-															<tbody>
-															<tr>
-																<td>Peter Clark</td>
-																<td>UI Designer</td>
-																<td>(641)-734-4763</td>
-																<td>
-																	<a href="#" class="edit-row">
-																		Edit
-																	</a></td>
-																<td>
-																	<a href="#" class="delete-row">
-																		Delete
-																	</a></td>
-															</tr>
-															<tr>
-																<td>Nicole Bell</td>
-																<td>Content Designer</td>
-																<td>(741)-034-4573</td>
-																<td>
-																	<a href="#" class="edit-row">
-																		Edit
-																	</a></td>
-																<td>
-																	<a href="#" class="delete-row">
-																		Delete
-																	</a></td>
-															</tr>
-															<tr>
-																<td>Steven Thompson</td>
-																<td>Visual Designer</td>
-																<td>(471)-543-4073</td>
-																<td>
-																	<a href="#" class="edit-row">
-																		Edit
-																	</a></td>
-																<td>
-																	<a href="#" class="delete-row">
-																		Delete
-																	</a></td>
-															</tr>
-															<tr>
-																<td>Ella Patterson</td>
-																<td>Web Editor</td>
-																<td>(799)-994-9999</td>
-																<td>
-																	<a href="#" class="edit-row">
-																		Edit
-																	</a></td>
-																<td>
-																	<a href="#" class="delete-row">
-																		Delete
-																	</a></td>
-															</tr>
-															<tr>
-																<td>Kenneth Ross</td>
-																<td>Senior Designer</td>
-																<td>(111)-114-1173</td>
-																<td>
-																	<a href="#" class="edit-row">
-																		Edit
-																	</a></td>
-																<td>
-																	<a href="#" class="delete-row">
-																		Delete
-																	</a></td>
-															</tr>
-															</tbody>
 														</table>
 													</div>
 												</div>
@@ -1559,7 +1489,7 @@
 		<script src="assets\plugins\tableExport\jspdf\libs\sprintf.js"></script>
 		<script src="assets\plugins\tableExport\jspdf\jspdf.js"></script>
 		<script src="assets\plugins\tableExport\jspdf\libs\base64.js"></script>
-		<script src="assets/custom/js/tab-dropdown-table-export.js"></script>
+		<script src="assets/custom/js/add-km-table.js"></script>
 		<!-- end: JAVASCRIPTS REQUIRED FOR THIS PAGE ONLY -->
 		<!-- start: CORE JAVASCRIPTS  -->
 		<script src="assets\js\main.js"></script>
