@@ -12,17 +12,6 @@ var TableExport = function() {
                 ignoreColumn: '['+ignoreColumn+']'
             });
         });
-        $(".export-png").on("click", function(e) {
-            e.preventDefault();
-            e.preventDefault();
-            var exportTable = $(this).data("table");
-            var ignoreColumn = $(this).data("ignorecolumn");
-            $(exportTable).tableExport({
-                type: 'png',
-                escape: 'false',
-                ignoreColumn: '['+ignoreColumn+']'
-            });
-        });
         $(".export-excel").on("click", function(e) {
             e.preventDefault();
             var exportTable = $(this).data("table");
@@ -33,42 +22,12 @@ var TableExport = function() {
                 ignoreColumn: '['+ignoreColumn+']'
             });
         });
-        $(".export-doc").on("click", function(e) {
-            e.preventDefault();
-            var exportTable = $(this).data("table");
-            var ignoreColumn = $(this).data("ignorecolumn");
-            $(exportTable).tableExport({
-                type: 'doc',
-                escape: 'false',
-                ignoreColumn: '['+ignoreColumn+']'
-            });
-        });
-        $(".export-powerpoint").on("click", function(e) {
-            e.preventDefault();
-            var exportTable = $(this).data("table");
-            var ignoreColumn = $(this).data("ignorecolumn");
-            $(exportTable).tableExport({
-                type: 'powerpoint',
-                escape: 'false',
-                ignoreColumn: '['+ignoreColumn+']'
-            });
-        });
         $(".export-csv").on("click", function(e) {
             e.preventDefault();
             var exportTable = $(this).data("table");
             var ignoreColumn = $(this).data("ignorecolumn");
             $(exportTable).tableExport({
                 type: 'csv',
-                escape: 'false',
-                ignoreColumn: '['+ignoreColumn+']'
-            });
-        });
-        $(".export-txt").on("click", function(e) {
-            e.preventDefault();
-            var exportTable = $(this).data("table");
-            var ignoreColumn = $(this).data("ignorecolumn");
-            $(exportTable).tableExport({
-                type: 'txt',
                 escape: 'false',
                 ignoreColumn: '['+ignoreColumn+']'
             });
@@ -140,10 +99,10 @@ var TableExport = function() {
             e.preventDefault();
 
             $.blockUI({
-                message : '<i class="fa fa-spinner fa-spin"></i> Get car registers.<br> please wait..'
+                message : '<i class="fa fa-spinner fa-spin"></i> Fetching ride logs.<br> please wait..'
             });
             $.ajax({
-                url : '/getcarregisters.php',
+                url : 'getcarregisters.php',
                 type : 'get',
                 data : {'car_number' : this.innerHTML},
                 success : function(data) {
@@ -341,11 +300,11 @@ var TableExport = function() {
         $('#add_km_table_wrapper .dataTables_length select').select2();
         // initialzie select2 dropdown
         $('#add_km_table_column_toggler input[type="checkbox"]').change(function() {
-            /* Get the DataTables object again - this is not a recreation, just a get of the object */
-            var iCol = parseInt($(this).attr("data-column"));
-            var bVis = oTable.fnSettings().aoColumns[iCol].bVisible;
-            oTable.fnSetColumnVis(iCol, ( bVis ? false : true));
-        });
+        /* Get the DataTables object again - this is not a recreation, just a get of the object */
+        var iCol = parseInt($(this).attr("data-column"));
+        var bVis = oTable.fnSettings().aoColumns[iCol].bVisible;
+        oTable.fnSetColumnVis(iCol, ( bVis ? false : true));
+    });
     };
 
     return {

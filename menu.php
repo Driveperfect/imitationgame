@@ -9,11 +9,16 @@
 								<ul class="sub-menu">
 									<li>
 										<a href="javascript:;">
-											Kilometer <i class="icon-arrow"></i>
+											Ritten <i class="icon-arrow"></i>
 										</a>
 										<ul class="sub-menu">
 											<li>
-												<a href="kilometerregistratie.php">
+												<a href="registratie_rit_overzicht.php">
+													Overzicht
+												</a>
+											</li>
+											<li>
+												<a href="registratie_rit_toevoegen.php">
 													Toevoegen
 												</a>
 											</li>
