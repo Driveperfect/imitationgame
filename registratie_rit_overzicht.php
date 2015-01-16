@@ -915,9 +915,6 @@
 												<div class="panel-body">
 													<div class="row">
 														<div class="col-md-12 space20">
-															<button class="btn btn-orange add-row">
-																Add New <i class="fa fa-plus"></i>
-															</button>
 															<div class="btn-group pull-right">
 																<button data-toggle="dropdown" class="btn btn-green dropdown-toggle">
 																	Export <i class="fa fa-angle-down"></i>
@@ -929,18 +926,8 @@
 																		</a>
 																	</li>
 																	<li>
-																		<a href="#" class="export-png" data-table="#add_km_table" data-ignorecolumn="3,4">
-																			Save as PNG
-																		</a>
-																	</li>
-																	<li>
 																		<a href="#" class="export-csv" data-table="#add_km_table" data-ignorecolumn="3,4">
 																			Save as CSV
-																		</a>
-																	</li>
-																	<li>
-																		<a href="#" class="export-txt" data-table="#add_km_table" data-ignorecolumn="3,4">
-																			Save as TXT
 																		</a>
 																	</li>
 																	<li>
@@ -961,16 +948,6 @@
 																	<li>
 																		<a href="#" class="export-excel" data-table="#add_km_table" data-ignorecolumn="3,4">
 																			Export to Excel
-																		</a>
-																	</li>
-																	<li>
-																		<a href="#" class="export-doc" data-table="#add_km_table" data-ignorecolumn="3,4">
-																			Export to Word
-																		</a>
-																	</li>
-																	<li>
-																		<a href="#" class="export-powerpoint" data-table="#add_km_table" data-ignorecolumn="3,4">
-																			Export to PowerPoint
 																		</a>
 																	</li>
 																</ul>
