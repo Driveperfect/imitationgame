@@ -120,7 +120,7 @@ var TableExport = function() {
             });
 
             $.ajax({
-                url : '/getcarregisters.php',
+                url : 'getcarregisters.php',
                 type : 'get',
                 data : {'car_number' : $("#first_tab").text()},
                 success : function(data) {
