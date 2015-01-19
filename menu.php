@@ -48,4 +48,55 @@
 									</li>
 								</ul>
 							</li>
+							<li><!-- 3 level menu voor transactie -->
+								<a href="javascript:;" class="active">
+									<i class="fa fa-folder"></i> <span class="title"> Transactie </span> <i class="icon-arrow"></i>
+								</a>
+								<ul class="sub-menu">
+									<li>
+										<a href="#">
+											Bankboek
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											Kasboek
+										</a>
+									</li>
+								</ul>
+							</li>
+							<li><!-- 3 level menu voor verkoop -->
+								<a href="javascript:;" class="active">
+									<i class="fa fa-folder"></i> <span class="title"> Verkoop </span> <i class="icon-arrow"></i>
+								</a>
+								<ul class="sub-menu">
+									<li>
+										<a href="#">
+											Invoeren
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											Overzicht
+										</a>
+									</li>
+								</ul>
+							</li>
+							<li><!-- 3 level menu voor inkoop -->
+								<a href="javascript:;" class="active">
+									<i class="fa fa-folder"></i> <span class="title"> Inkoop </span> <i class="icon-arrow"></i>
+								</a>
+								<ul class="sub-menu">
+									<li>
+										<a href="#">
+											Invoeren
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											Overzicht
+										</a>
+									</li>
+								</ul>
+							</li>
 						</ul>
