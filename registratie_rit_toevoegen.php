@@ -789,7 +789,7 @@
                                             Bestemming
                                         </label>
                                         <div class="col-sm-9">
-                                            <input type="text" placeholder="Bestemming" id="field_destination" name="destionation" class="form-control">
+                                            <input type="text" placeholder="Bestemming" id="field_destination" name="destination" class="form-control">
                                         </div>
                                     </div>
                                     <div class="form-group">
@@ -805,22 +805,32 @@
                                             </select>
                                         </div>
                                     </div>
-                                    <div class="checkbox">
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label" for="field_default">
+                                            Omleiding route
+                                        </label>
+                                        <div class="col-sm-9">
+                                            <input id="field_end_km" type="text" value="0" name="field_end_km" class="km_spin">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
                                         <label class="col-sm-2 control-label" for="field_default">
                                             Standaard Rit
                                         </label>
-                                        <div class="col-sm-9">
+                                        <div class="col-sm-2 control-label" for="field_destination">
                                             <input type="checkbox" value="" class="grey" id="field_default">
                                         </div>
                                     </div>
-                                    <div class="checkbox">
+                                    <div class="form-group">
                                         <label class="col-sm-2 control-label" for="field_retour">
                                             Retour
                                         </label>
-                                        <div class="col-sm-9">
+                                        <div class="col-sm-2 control-label" for="field_destination">
                                             <input type="checkbox" value="" class="grey" id="field_retour">
                                         </div>
                                     </div>
+
+                                </div>
                                 </form>
                             </div>
                         </div>
