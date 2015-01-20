@@ -119,6 +119,7 @@ h1, h2, h3, h4 {
   -ms-transform: translate3d(0, 0, 0);
   -webkit-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
+
 }
 
 .ajax-white-backdrop {
@@ -130,6 +131,7 @@ h1, h2, h3, h4 {
   top: 0;
   right: 0;
   z-index: 1049;
+
 }
 
 .ajax-white-backdrop:before {
@@ -6633,9 +6635,25 @@ body.error-full-page {
   color: #2c2f3b !important;
 }
 
+/*
+witte wrapper bij kalender
+border style solid toegevoegd
+mogelijkheid om aan te passen om mooi te passen bij het gehele design
+probeer een shader effect bij te maken
+border kan misschien overgaan in 2 borders met de uiterste border een lichtere kleur voor een mooier shader effect
+
+
+aan dit project werken lijkt me wel leuk.
+als marcel het goed vindt dan vind ik het best!!
+
+-Bart Stout
+*/
+
 .panel-white, .partition-white {
   background-color: white;
-  position: relative;
+  border-right: solid;
+  border-bottom: solid;
+  border-style-width: 2px;
   color: #8b91a0;
 }
 
